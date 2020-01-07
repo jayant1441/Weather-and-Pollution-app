@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/weather_navigation" android:title="Weather" android:icon="@drawable/weather_icon"/>
+    <item android:id="@+id/Pollution_navigation" android:title="Pollution" android:icon="@drawable/pollution_icon"/>
+    <item android:id="@+id/Maps_navigation" android:title="Maps" android:icon="@drawable/maps_icon"/>
+    <item android:id="@+id/Settings_navigation" android:title="Settings" android:icon="@drawable/setting_icon"/>
+
+
+
+</menu>

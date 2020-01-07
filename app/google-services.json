@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "461931325122",
+    "firebase_url": "https://weather-and-pollution-app.firebaseio.com",
+    "project_id": "weather-and-pollution-app",
+    "storage_bucket": "weather-and-pollution-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461931325122:android:d8d3f53d40d83b40f57d5b",
+        "android_client_info": {
+          "package_name": "com.example.weatherandpollutionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461931325122-8sv07pkcabeku5uclc2hs17973nc75ph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weatherandpollutionapp",
+            "certificate_hash": "9e390b527f322639bd124a45325aedb08d191581"
+          }
+        },
+        {
+          "client_id": "461931325122-ucuiiqqgjc25plskdrod1gsi0d73pj30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpOcSzMoxux08ZyfGPokgkfkkN9OTMBHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461931325122-ucuiiqqgjc25plskdrod1gsi0d73pj30.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
