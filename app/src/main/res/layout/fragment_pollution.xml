@@ -19,13 +19,13 @@
             android:id="@+id/tv_city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Panipat"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="Wait..."
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="35sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
@@ -50,19 +50,19 @@
             android:id="@+id/tv_pollutionDisplay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="175"
-            android:textColor="@color/white"
-            android:textSize="60sp"
-            android:textAlignment="center"
+            android:layout_marginTop="41dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="41dp"/>
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="60sp" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="45dp"
-            android:text="AQI"
+            android:text="Please wait..."
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25sp" />

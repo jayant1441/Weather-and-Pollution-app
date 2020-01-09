@@ -11,10 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import com.example.weatherandpollutionapp.R
 import com.google.android.gms.location.*
 import kotlinx.android.synthetic.main.activity_location_finder.*
 
@@ -24,7 +22,8 @@ class LocationFinderActivity : AppCompatActivity() {
     lateinit var mFusedLocationClient: FusedLocationProviderClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(com.example.weatherandpollutionapp.R.layout.activity_location_finder)
+
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
@@ -32,17 +31,17 @@ class LocationFinderActivity : AppCompatActivity() {
     }
 
     @SuppressLint("MissingPermission")
-    private fun getLastLocation() {
+     fun getLastLocation() {
         if (checkPermissions()) {
             if (isLocationEnabled()) {
 
                 mFusedLocationClient.lastLocation.addOnCompleteListener(this) { task ->
-                    val location: Location? = task.result
+                    var location: Location? = task.result
                     if (location == null) {
                         requestNewLocationData()
                     } else {
-                       findViewById<TextView>(R.id.tv_latitude).text = location.latitude.toString()
-                        findViewById<TextView>(R.id.tv_longitude).text = location.longitude.toString()
+                        tv_latitude.text = location.latitude.toString()
+                        tv_longitude.text = location.longitude.toString()
                     }
                 }
             } else {
@@ -64,7 +63,7 @@ class LocationFinderActivity : AppCompatActivity() {
         mLocationRequest.numUpdates = 1
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        mFusedLocationClient.requestLocationUpdates(
+        mFusedLocationClient!!.requestLocationUpdates(
             mLocationRequest, mLocationCallback,
             Looper.myLooper()
         )

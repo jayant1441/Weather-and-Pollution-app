@@ -60,26 +60,6 @@ class PollutionFragment : Fragment() {
             try {
                 /* Extracting JSON returns from the API */
                 val jsonObj2 = JSONObject(result)
-             /**   val main = jsonObj.getJSONObject("main")
-                val sys = jsonObj.getJSONObject("sys")
-                val wind = jsonObj.getJSONObject("wind")
-                val weather = jsonObj.getJSONArray("weather").getJSONObject(0)
-                val updatedAt:Long = jsonObj.getLong("dt")
-
-                val pressure = main.getString("pressure")
-                val temp = main.getString("temp")
-                val temp_min = main.getString("temp_min")
-                val temp_max = main.getString("temp_max")
-                val humidity = main.getString("humidity")
-                val updatedAtText = "Updated at: "+ SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.ENGLISH).format(
-                    Date(updatedAt*1000)
-                )
-                val sunrise = sys.getLong("sunrise")
-                val sunset = sys.getLong("sunset")
-                val sky_status = weather.getString("description")
-                val wind_speed =wind.getString("speed")
-                val city_name = jsonObj.getString("name")**/
-
 
                 val data = jsonObj2.getJSONObject("data")
                 val current = data.getJSONObject("current")
@@ -91,18 +71,12 @@ class PollutionFragment : Fragment() {
 
                 tv_pollutionDisplay.text = aqius
                 tv_city.text = city
-
-
+                textView4.text = "AQI"
 
 
             }catch (e:Exception){
                 Toast.makeText(context, "Authentication failed.", Toast.LENGTH_SHORT).show()
             }
-
-
-
         }
-
     }
-
 }

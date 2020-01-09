@@ -4,6 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.example.weatherandpollutionapp.FindingLocation.LocationFinderActivity
 import kotlinx.android.synthetic.main.activity_developer.*
 
 class developer : AppCompatActivity() {
@@ -18,8 +20,11 @@ class developer : AppCompatActivity() {
         }
 
 
+
+
         facebook_contact2.setOnClickListener {
             intent_developer_contact("https://www.facebook.com/jayant.dhingra.54")
+
         }
         instagram_contact2.setOnClickListener {
             intent_developer_contact("https://www.instagram.com/jayantdhingra3/")

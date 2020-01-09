@@ -31,18 +31,14 @@ class LoginActivity2 : AppCompatActivity() {
                         // Sign in success, update UI with the signed-in user's information
                         Toast.makeText(baseContext, "Login Successful", Toast.LENGTH_SHORT).show()
                         val user = auth.currentUser
-                       // updateUI(user)
+                        updateUI(user)
                     } else {
                         // If sign in fails, display a message to the user.
-
-                        Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT)
-                            .show()
-                        updateUI(null)
+                        Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
                     }
                 }
             } catch (ex: Exception) {
                 Toast.makeText(baseContext, "Something went wrong", Toast.LENGTH_SHORT).show()
-
             }
         }
 

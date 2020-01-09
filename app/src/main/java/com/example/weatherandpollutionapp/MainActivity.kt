@@ -3,6 +3,7 @@ package com.example.weatherandpollutionapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.weatherandpollutionapp.FindingLocation.LocationFinderActivity
 import com.example.weatherandpollutionapp.Fragments.MapsFragment
 import com.example.weatherandpollutionapp.Fragments.PollutionFragment
 import com.example.weatherandpollutionapp.Fragments.SettingsFragment

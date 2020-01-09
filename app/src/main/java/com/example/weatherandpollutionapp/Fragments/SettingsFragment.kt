@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.example.weatherandpollutionapp.ChangePassword
 import com.example.weatherandpollutionapp.MainActivity
 import com.example.weatherandpollutionapp.SignUp_Login.LoginActivity2
 import com.example.weatherandpollutionapp.R
@@ -33,6 +34,8 @@ class SettingsFragment : Fragment() {
         val tv_delete_account = my_view4.tv_delete_Account as TextView
         val tv_contact_us = my_view4.tv_contact_us as TextView
         val tv_developer = my_view4.tv_developer as TextView
+        val tv_about_us = my_view4.tv_about_us as TextView
+        val tv_change_password = my_view4.tv_change_password as TextView
 
 
         tv_delete_account.setOnClickListener{
@@ -48,26 +51,32 @@ class SettingsFragment : Fragment() {
         }
 
 
-        tv_log_out.setOnClickListener{
-            if(onStart().equals(true)){
+        val user = FirebaseAuth.getInstance().currentUser
+        tv_log_out.setOnClickListener {
+
+            if (user != null) {
                 FirebaseAuth.getInstance().signOut()
-                Toast.makeText(context,"User Signed Out" , Toast.LENGTH_SHORT).show()
-            }
-            else{
+                Toast.makeText(context,"User Log Out" , Toast.LENGTH_SHORT).show()
+
+            } else {
                 Toast.makeText(context,"Login First" , Toast.LENGTH_SHORT).show()
+
             }
         }
 
 
 
         tv_login.setOnClickListener {
-            if (onStart().equals(true)){
-                println("already logged in")
-            }
-            else{
+            if(user == null){
                 val intent_to_login_activity = Intent(context, LoginActivity2::class.java)
                 startActivity(intent_to_login_activity)
             }
+            else
+            {
+                Toast.makeText(context,"Already signed in" , Toast.LENGTH_SHORT).show()
+
+            }
+
         }
 
 
@@ -84,6 +93,15 @@ class SettingsFragment : Fragment() {
             startActivity(intent_to_developer)
         }
 
+        tv_about_us.setOnClickListener {
+            var intent_to_developer = Intent(context,developer::class.java)
+            startActivity(intent_to_developer)
+        }
+
+        tv_change_password.setOnClickListener {
+            startActivity(Intent(context,ChangePassword::class.java))
+        }
+
 
         return my_view4
 
@@ -97,12 +115,10 @@ class SettingsFragment : Fragment() {
 
 
     private fun login_to_welcome(){
-        if(onStart().equals(true)){
+        val user = FirebaseAuth.getInstance().currentUser
+
+        if (user != null ) {
             tv_login.text = "Welcome"
-            tv_login.isEnabled = false
-        }
-        else{
-            tv_login.text = "Login"
         }
     }
 

@@ -34,15 +34,13 @@ class Weatherfragment : Fragment() {
         var city_name = my_view.tv_city_name as TextView
         var updated_time= my_view.tv_updated_time as TextView
         var current_temp = my_view.tv_current_temp as TextView
-        var min_temp = my_view.tv_min_temp as TextView
-        var max_temp = my_view.tv_max_temp as TextView
         var sunrise_time = my_view.tv_sunrise_time as TextView
         var sunset_time = my_view.tv_sunset_time as TextView
         var wind = my_view.tv_wind as TextView
         var pressure = my_view.tv_pressure as TextView
         var humidity = my_view.tv_humidity as TextView
 
-        weatherTask().execute()
+
 
 
         return my_view
@@ -85,8 +83,6 @@ class Weatherfragment : Fragment() {
 
                 val pressure = main.getString("pressure")
                 val temp = main.getString("temp")
-                val temp_min = main.getString("temp_min")
-                val temp_max = main.getString("temp_max")
                 val humidity = main.getString("humidity")
                 val updatedAtText = "Updated at: "+ SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.ENGLISH).format(Date(updatedAt*1000))
                 val sunrise = sys.getLong("sunrise")
@@ -99,8 +95,6 @@ class Weatherfragment : Fragment() {
                 tv_sky_status.text = sky_status
                 tv_current_temp.text = temp + "°C"
                 tv_pressure.text = pressure
-                tv_max_temp.text = "Max Temp: "+temp_max + "°C"
-                tv_min_temp.text = "Min Temp: "+temp_min + "°C"
                 tv_humidity.text = humidity
                 tv_sunrise_time.text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunrise*1000))
                 tv_sunset_time.text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunset*1000))
