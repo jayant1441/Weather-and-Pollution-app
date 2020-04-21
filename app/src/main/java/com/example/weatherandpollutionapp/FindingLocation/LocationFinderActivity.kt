@@ -9,10 +9,12 @@ import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.example.weatherandpollutionapp.MainActivity
 import com.google.android.gms.location.*
 import kotlinx.android.synthetic.main.activity_location_finder.*
 
@@ -28,6 +30,7 @@ class LocationFinderActivity : AppCompatActivity() {
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         getLastLocation()
+
     }
 
     @SuppressLint("MissingPermission")
@@ -42,6 +45,12 @@ class LocationFinderActivity : AppCompatActivity() {
                     } else {
                         tv_latitude.text = location.latitude.toString()
                         tv_longitude.text = location.longitude.toString()
+                        Handler().postDelayed({
+                            startActivity(Intent(this,MainActivity::class.java))
+                            this.finish()
+                        },1000)
+
+
                     }
                 }
             } else {
@@ -85,15 +94,8 @@ class LocationFinderActivity : AppCompatActivity() {
     }
 
     private fun checkPermissions(): Boolean {
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED &&
-            ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+            ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             return true
         }
         return false
