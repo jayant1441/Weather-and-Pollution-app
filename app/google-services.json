@@ -3,7 +3,8 @@
     "project_number": "461931325122",
     "firebase_url": "https://weather-and-pollution-app.firebaseio.com",
     "project_id": "weather-and-pollution-app",
-    "storage_bucket": "weather-and-pollution-app.appspot.com"
+    "storage_bucket": "weather-and-pollution-app.appspot.com",
+    "version": "1.0.0"
   },
   "client": [
     {
