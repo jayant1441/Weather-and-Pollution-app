@@ -43,9 +43,9 @@ class SettingsFragment : Fragment() {
 
             user?.delete()?.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(context,"Account Deleted Successfully" , Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context,"Account Deleted" , Toast.LENGTH_SHORT).show()
                     }else{
-                        Toast.makeText(context,"Some error occured" , Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context,"Error Occured" , Toast.LENGTH_SHORT).show()
                     }
             }
         }
@@ -56,10 +56,10 @@ class SettingsFragment : Fragment() {
 
             if (user != null) {
                 FirebaseAuth.getInstance().signOut()
-                Toast.makeText(context,"User Log Out" , Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Logged Out" , Toast.LENGTH_SHORT).show()
 
             } else {
-                Toast.makeText(context,"Login First" , Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Please Login" , Toast.LENGTH_SHORT).show()
 
             }
         }
@@ -73,7 +73,7 @@ class SettingsFragment : Fragment() {
             }
             else
             {
-                Toast.makeText(context,"Already signed in" , Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Already logged in" , Toast.LENGTH_SHORT).show()
 
             }
 
@@ -84,7 +84,7 @@ class SettingsFragment : Fragment() {
             val intent_to_gmail = Intent(Intent.ACTION_SENDTO)
             intent_to_gmail.data = Uri.parse("mailto:")
             intent_to_gmail.putExtra(Intent.EXTRA_EMAIL,"jayantdhingra1441@gmail.com")
-            intent_to_gmail.putExtra(Intent.EXTRA_SUBJECT,"Feedback")
+            intent_to_gmail.putExtra(Intent.EXTRA_SUBJECT,"Have something on your mind")
             startActivity(intent_to_gmail)
         }
 
@@ -118,7 +118,7 @@ class SettingsFragment : Fragment() {
         val user = FirebaseAuth.getInstance().currentUser
 
         if (user != null ) {
-            tv_login.text = "Welcome"
+            tv_login.text = "Greetings"
         }
     }
 
