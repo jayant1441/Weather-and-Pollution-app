@@ -71,11 +71,11 @@ class PollutionFragment : Fragment() {
 
                 tv_pollutionDisplay.text = aqius
                 tv_city.text = city
-                textView4.text = "AQI"
+                textView4.text = "Air Quality Index (AQI)"
 
 
             }catch (e:Exception){
-                Toast.makeText(context, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Whoops! Authentication failed", Toast.LENGTH_SHORT).show()
             }
         }
     }
